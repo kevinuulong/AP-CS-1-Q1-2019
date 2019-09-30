@@ -6,11 +6,17 @@
 public class booleanstuff {
 
     public static void main(String[] args) {
-        System.out.println("Truth Table");
+        //System.out.println("Truth Table");
         boolean x, y;
         x = false;
         y = true;
         System.out.println(xor(x, y));
+
+        for (int i = 0; i < 10; i++) {
+            double j = Math.floor(Math.random()*10000)/100;
+            System.out.println(j);
+            System.out.println(lettergrade(j));
+        }
         /*
         System.out.println("x   \t| y \t| x&&y  | x||y  | !=x   | !y    | !x||!y");
         System.out.println("---------------------------------------------------------");
@@ -49,16 +55,20 @@ public class booleanstuff {
     }
 
     public static boolean xor(boolean x, boolean y) {
-    /*    if (x||y) {
-            if (x&&y) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    }*/
         return (x || y) && !(x || y);
+    }
+
+    public static char lettergrade(double percent){
+        if ((int)percent>=89.5){
+            return 'A';
+        } else if((int)percent>=79.5){
+            return 'B';
+        } else if((int)percent>=69.5){
+            return 'C';
+        } else if((int)percent>=59.5){
+            return 'D';
+        } else {
+            return 'F';
+        }
     }
 }

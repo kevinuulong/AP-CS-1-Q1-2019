@@ -37,9 +37,10 @@ public class strings {
         //To:   ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
         //          ^
 
-        for (int i = 65; i <= 90; i++) {
+        /*for (int i = 65; i <= 90; i++) {
             System.out.print(shift((char)i,4));
-        }
+        }*/
+        System.out.println(encoder("Hello", 4));
     }
 
     public static char shift(char x, int shift){
@@ -70,6 +71,16 @@ public class strings {
         while (control > 0){
             output += str.charAt(control-1);
             control--;
+        }
+        return output;
+    }
+
+    public static String encoder(String input, int shift){
+        String output = "";
+        int temp;
+        for (int i = 0; i < input.length(); i++) {
+            temp = (int)input.charAt(i)+shift;
+            output += (char) temp;
         }
         return output;
     }
