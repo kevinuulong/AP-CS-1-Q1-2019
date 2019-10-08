@@ -5,6 +5,12 @@ public class strings {
 
     public static void main(String[] args) {
         String thing = "Hello, world!";
+        String str1 = "ABC";
+        String str2 = "AB";
+
+        stringsorter(str1,str2);
+
+        //System.out.println(str1.compareTo(str2));
 /*        for (int i = 0; i < thing.length(); i++) {
             System.out.println(thing.charAt(i));
         }
@@ -40,7 +46,10 @@ public class strings {
         /*for (int i = 65; i <= 90; i++) {
             System.out.print(shift((char)i,4));
         }*/
-        System.out.println(encoder("Hello", 4));
+        String msg = "HELLO";
+        String key = "ABCAB";
+        //System.out.println(encoder("Hello", 4));
+        //System.out.println(vencoder(msg,key));
     }
 
     public static char shift(char x, int shift){
@@ -83,5 +92,35 @@ public class strings {
             output += (char) temp;
         }
         return output;
+    }
+
+    public static String vencoder(String input, String key){
+        String output = "";
+        int temp;
+        for (int i = 0; i < input.length(); i++) {
+            temp = (int)input.charAt(i)+key.charAt(i);
+            output += (char) temp;
+        }
+        return output;
+    }
+
+    /*public static String publickeyencryption(){
+
+    }*/
+
+    /*
+    ABC
+    AB
+    A
+     */
+
+    public static void stringsorter(String str1, String str2){
+        if (str1.compareTo(str2)<0) {
+            System.out.println(str1);
+            System.out.println(str2);
+        } else if(str1.compareTo(str2)>-1) {
+            System.out.println(str2);
+            System.out.println(str1);
+        }
     }
 }
